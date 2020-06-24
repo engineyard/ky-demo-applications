@@ -19,13 +19,6 @@ RUN gem install bundler -v '1.16.3' && bundle install --without development test
 # Copy the main application.
 COPY . ./
 
-
-#Run migrations
-RUN bundle exec rake db:migrate
-
-# Precompile Rails assets
-RUN bundle exec rake assets:precompile
-
 # Expose port 5000 to the Docker host, so we can access it 
 # from the outside. This is the same as the one set with
 # `deis config:set PORT 5000`
