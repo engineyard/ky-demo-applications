@@ -22,8 +22,6 @@ COPY . ./
 
 #Run migrations
 RUN bundle exec rake db:migrate
-ARG REDIS_URL
-RUN echo $REDIS_URL>/tmp/test
 
 # Precompile Rails assets
 RUN bundle exec rake assets:precompile
@@ -33,7 +31,5 @@ RUN bundle exec rake assets:precompile
 # `deis config:set PORT 5000`
 EXPOSE 5000
 
-# The main command to run when the container starts. Also 
-# tell the Rails dev server to bind to all interfaces by 
-# default.
+# The main command to run when the container starts. 
 CMD sleep 3600
