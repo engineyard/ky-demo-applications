@@ -1,0 +1,27 @@
+# This is just a normal job that runs every minute
+- name: what-am-i
+  command: echo "I am a command"
+  when: "* * * * *"
+
+# This is a job that runs every minute and uses environment variables
+- name: using-env-vars
+  command: echo $WORKFLOW_RELEASE
+  when: "* * * * *"
+
+
+# This is a job that runs every minute and uses environment variables
+- name: using-env-vars-script
+  command: "./cron-related/cronenberg/test-script.sh [5,'all','all']"
+  when: "* * * * *"
+
+# This is a job that runs every minute and uses environment variables
+- name: using-env-vars-rake
+  command: bundle exec bin/rake thing:work[5,'all','all']
+  when: "* * * * *"
+
+# This is a locking job that is scheduled to run every minute so long as there
+# is not already an instance of the job in progress.
+- name: picky-picky
+  command: 'echo "I am a picky command" ; sleep 70'
+  when: "* * * * *"
+  lock: true

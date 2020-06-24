@@ -1,0 +1,2 @@
+web: bundle exec rake assets:precompile && bundle exec rails server -b 0.0.0.0 -p 5000 -e development 
+cronenberg: echo "Test 1,2,3 ${KUBERNETES_SERVICE_PORT}" > ./cron-related/cronenberg/dynamic && cronenberg ./ky-specific/cronenberg/cron-jobs.yml
