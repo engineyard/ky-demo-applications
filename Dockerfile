@@ -10,9 +10,10 @@ RUN mkdir -p /app
 WORKDIR /app
 
 
+ARG RAILS_ENV
 # Copy the main application.
 COPY . ./
-RUN gem install bundler -v '1.16.3' && bundle install --without development test --jobs 20 --retry 5
+RUN gem install bundler -v '1.16.3' && bundle install --without development test --jobs 20 --retry 5 --verbose
 
 # Test that the database.yml works as expected
 ARG db_yml_password
