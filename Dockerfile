@@ -28,7 +28,7 @@ RUN bundle exec rake db:migrate:status
 RUN chmod +x ky-specific/migration/db-migrate.sh 
 
 # Precompile Rails assets
-RUN bundle exec rake assets:precompile
+# RUN bundle exec rake assets:precompile
 
 
 
