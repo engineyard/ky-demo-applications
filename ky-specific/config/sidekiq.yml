@@ -1,0 +1,7 @@
+# sidekiq settings
+# see: https://github.com/mperham/sidekiq/blob/master/examples/config.yml
+---
+:verbose: false
+:concurrency: 4
+:queues:
+  - ["default", 1]

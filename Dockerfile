@@ -20,6 +20,8 @@ ARG db_yml_password
 ARG db_yml_host
 ARG SECRET_KEY_BASE
 RUN erb -T - ./ky-specific/config/database.yml.erb > config/database.yml
+RUN cp ./ky-specific/config/sidekiq.yml config/sidekiq.yml
+
 RUN bundle exec rake db:migrate:status
 
 # Make the migration script runable
