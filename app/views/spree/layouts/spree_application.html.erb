@@ -7,7 +7,12 @@
   <head data-hook="inside_head">
     <%= render partial: 'spree/shared/head' %>
   </head>
+         
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+    REF: <%= `cat REVISION` %>
+    <br/>
+    ENV: <%= ENV['EYCLOUDORKY'] %>
+
     <%= render partial: 'spree/shared/header' %>
 
     <div class="container">
