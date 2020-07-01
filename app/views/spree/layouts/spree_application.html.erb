@@ -9,9 +9,9 @@
   </head>
          
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
-    REF: <%= `cat REVISION` %>
+    <b>REF: <%= (ENV['SOURCE_VERSION'].nil? `cat REVISION` : ENV['SOURCE_VERSION']) %></b>
     <br/>
-    ENV: <%= ENV['EYCLOUDORKY'] %>
+    <b>ENV: <%= ENV['EYCLOUDORKY'] %></b>
 
     <%= render partial: 'spree/shared/header' %>
 
