@@ -1,0 +1,7 @@
+---
+# This is all you need for a typical rails application.
+defaults:
+  #migrate: true
+  #migration_command: rake db:migrate
+  precompile_assets: true
+  precompile_assets_command: . /data/ky_demo_applications/shared/config/env.cloud && rake assets:precompile
