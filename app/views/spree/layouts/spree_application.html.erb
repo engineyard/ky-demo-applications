@@ -9,7 +9,7 @@
   </head>
          
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
-    <b>REF: <%= (ENV['SOURCE_VERSION'].nil? `cat REVISION` : ENV['SOURCE_VERSION']) %></b>
+    <b>REF: <%= (ENV['SOURCE_VERSION'].nil? ? `cat REVISION` : ENV['SOURCE_VERSION']) %></b>
     <br/>
     <b>ENV: <%= ENV['EYCLOUDORKY'] %></b>
 
