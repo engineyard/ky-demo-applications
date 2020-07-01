@@ -13,13 +13,13 @@ WORKDIR /app
 ARG RAILS_ENV
 # Copy the main application.
 COPY . ./
-RUN gem install bundler -v '1.16.3' && bundle install --without development test --jobs 20 --retry 5 --verbose
+RUN gem install bundler -v '1.16.3' && bundle install --without development test --jobs 20 --retry 5
 
 # Test that the database.yml works as expected
 ARG db_yml_password
 ARG db_yml_host
+ARG SECRET_KEY_BASE
 RUN erb -T - ./ky-specific/config/database.yml.erb > config/database.yml
-RUN cat config/database.yml
 RUN bundle exec rake db:migrate:status
 
 # Make the migration script runable
