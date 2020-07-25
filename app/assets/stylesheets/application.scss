@@ -1,0 +1,80 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+body, html {
+    height: 100%;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+body {
+    padding:0;
+    margin:0;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+
+
+.ey-text-color {
+    color: #385ce2;
+}
+.center-text {
+    text-align: center;
+}
+
+.bgimg-1 {
+    /* The image used */
+    background-image: url(image-path('rsz_1rsz_pxfuelcom-min.png')); /* The image used */
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.my-auto{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.center-text {
+    text-aling:center;
+}
+
+.container-fixed-width {
+    /* width:800px;*/
+    margin:0 auto;
+    padding:0 auto;
+    background: rgba(255,255,255,0.7);
+    border-radius: 2px 2px 2px 2px;
+    -moz-border-radius: 2px 2px 2px 2px;
+    -webkit-border-radius: 2px 2px 2px 2px;
+}
+
+.row {
+    margin:0 !important;
+}

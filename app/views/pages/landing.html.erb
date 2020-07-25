@@ -1,0 +1,50 @@
+
+<div class="bgimg-1">
+    <div class="row h-100">
+       <div class="col-sm-12 col-md-6 my-auto container-fixed-width">
+            <br/>
+            <h1 class="ey-text-color center-text">Welcome to Engine Yard Kontainers</h1>
+
+            <p>Useful endpoints:</p>
+                <ul>
+                    <li><a href="/sidekiq" target="_blank">sidekiq control panel</a></li>
+                    <li><a href="/metrics" target="_blank">custom metrics page</a></li>
+            </ul>
+
+            <h4 class="ey-text-color">Actions</h4>
+            <a href="/enqueue-jobs?job_type=five_min_delay_job&job_count=10" class="btn btn-outline-primary">Add five min delay jobs</a>
+            <a href="/enqueue-jobs?job_type=echo_job&job_count=10" class="btn btn-outline-primary">Add echo jobs</a>
+            <br/>
+            <br/>
+            <h3 class="ey-text-color">Sidekiq Status</h3>
+            <table class="table">
+                <tbody>
+                <% @template_variables["sidekiq"].each do |stat| %>
+                    <tr>
+                        <td><%= stat["key"] %></td>
+                        <td><%= stat["value"] %></td>
+                    </tr>
+
+                <% end %>
+                </tbody>
+            </table>
+
+            <h3 class="ey-text-color">Configuration <a href="https://jfuechsl-playground-admin.kontaineryard.io/dash/apps" target="_blank"><i class="fa fa-cog fa-fw"></i></a></h3>
+            <table class="table">
+                <tbody>
+                <% @template_variables["environment"].each do |stat| %>
+                    <tr>
+                        <td><%= stat["key"] %></td>
+                        <td><%= stat["value"] %></td>
+                        <td><%= stat["explanation"] %></td>
+                    </tr>
+
+                <% end %>
+                </tbody>
+            </table>
+
+       </div>
+    </div>
+</div>
+
+
