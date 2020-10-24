@@ -25,7 +25,7 @@ COPY . ./
 RUN chmod +x ky_specific/start_webserver_script.sh
 
 # Expose port 5000 to the Docker host, so we can access it 
-# from the outside. This is the same as the one set with
+# from outside. This is the same as the one set with
 # `deis config:set PORT 5000`
 EXPOSE 5000
 
